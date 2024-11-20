@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Princess!</title>
+    <link rel="icon" type="image/png" href="code/heart-icon.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+        body, html {
+            cursor: url('cursor/pinkheart_normalselect.cur'), auto;
+            height: 100%;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f7e9ff;
+            overflow: hidden;
+            cursor: url('code/cursor/pinkheart_normalselect.cur'), auto;
+        }
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+        }
+        .giftbox {
+            cursor: url('code/cursor/pinkheart_linkselect.cur'), auto;
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            left: 50%;
+            margin-left: -150px;
+            bottom: 40px;
+            z-index: 10;
+        }
+        .giftbox > div {
+            background: #F986AD;
+            position: absolute;
+        }
+        .giftbox > div:after, .giftbox > div:before {
+            position: absolute;
+            content: "";
+            top: 0;
+        }
+        .giftbox:after {
+            position: absolute;
+            color: #5c005c;
+            width: 100%;
+            left: 0;
+            bottom: -20px;
+            font-size: 24px;
+            text-align: center;
+            transform-origin: 0 0;
+            font-weight: bold;
+        }
+        .giftbox .cover {
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 25%;
+            z-index: 2;
+        }
+        .giftbox .cover:before {
+            position: absolute;
+            height: 100%;
+            left: 50%;
+            width: 50px;
+            transform: translateX(-50%);
+            background: #fff;
+        }
+        .giftbox .cover > div {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            top: -50px;
+            transform: translateX(-50%);
+        }
+        .giftbox .cover > div:before, .giftbox .cover > div:after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            box-shadow: inset 0 0 0 15px #fff;
+            border-radius: 30px;
+            transform-origin: 50% 100%;
+        }
+        .giftbox .cover > div:before {
+            transform: translateX(-45%) skewY(40deg);
+        }
+        .giftbox .cover > div:after {
+            transform: translateX(45%) skewY(-40deg);
+        }
+        .giftbox .box {
+            right: 5%;
+            left: 5%;
+            height: 80%;
+            bottom: 0;
+        }
+        .giftbox .box:before {
+            width: 50px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+        }
+        .giftbox .box:after {
+            width: 100%;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .step-1 .giftbox {
+            animation: wobble 0.5s linear infinite forwards;
+        }
+        .step-1 .cover {
+            animation: wobble 0.5s linear infinite 0.1s forwards;
+        }
+        .step-2 .giftbox:after {
+            opacity: 0;
+        }
+        .step-2 .giftbox .cover {
+            animation: flyUp 0.4s ease-in forwards;
+        }
+        .step-2 .giftbox .box {
+            animation: flyDown 0.2s ease-in 0.05s forwards;
+        }
+        @keyframes wobble {
+            25% { transform: rotate(4deg); }
+            75% { transform: rotate(-2deg); }
+        }
+        @keyframes flyUp {
+            75% { opacity: 1; }
+            100% { transform: translateY(-1000px) rotate(20deg); opacity: 0; }
+        }
+        @keyframes flyDown {
+            75% { opacity: 1; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+        .hidden {
+            display: none;
+        }
+        #balloons-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #cake-container {
+            text-align: center;
+        }
+        #birthday-message {
+            font-size: 24px;
+            color: #86469C;
+        }
+        #cake-gif {
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        #continue-button {
+            cursor: url('code/cursor/pinkheart_linkselect.cur'), auto;
+            display: none; /* Hide the button initially */
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #F986AD;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            color: white;
+        }
+        #continue-button:hover {
+            cursor: url('code/cursor/pinkheart_linkselect.cur'), auto;
+            background-color: #e572a3; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div id="merrywrap" class="merrywrap">
+            <div class="giftbox">
+                <div class="cover">
+                    <div></div>
+                </div>
+                <div class="box"></div>
+            </div>
+        </div>
+
+        <div id="balloons-container" class="hidden"></div>
+
+        <div id="cake-container" class="hidden">
+            <h1 id="birthday-message" class="game-text pixel-text">Happy Birthday my Princess!!</h1>
+            <img id="cake-gif" src="cake.gif" alt="Birthday Cake">
+        </div>
+        <button id="continue-button" onclick="window.location.href='code/home_page.html'">Click here to continue</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const merrywrap = document.getElementById('merrywrap');
+            const balloonsContainer = document.getElementById('balloons-container');
+            const cakeContainer = document.getElementById('cake-container');
+            const continueButton = document.getElementById('continue-button');
+
+            merrywrap.addEventListener('click', () => {
+                merrywrap.classList.add('step-1');
+
+                setTimeout(() => {
+                    merrywrap.classList.add('step-2');
+                    
+                    // Show cake and button after gift animation
+                    setTimeout(() => {
+                        merrywrap.style.display = 'none'; // Hide giftbox
+                        cakeContainer.classList.remove('hidden');
+                        continueButton.style.display = 'block'; // Show continue button
+                    }, 800);
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
