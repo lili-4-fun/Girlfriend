@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas!</title>
+  <link rel="stylesheet" href="christmas.css">
+  <link rel="icon" type="image/png" href="../../heart-icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+  <audio id="background-music" src="christmas.mp3"></audio>
+<!-- Sound control button with Font Awesome icon -->
+<button id="play-music-button" class="volume-button">
+    <i id="sound-icon" class="fas fa-volume-up"></i>
+</button>
+
+<main>
+    <div>
+      <img class="heart-container" src="../../images/liza2.png" alt="Liza">
+      <div class="speech-bubble"> First, play the music on the top right corner <br><br>
+        This is a little christmas countdown my baby!!<br><br>
+        You probably already have one knowing how obssesed you are with christmas...<br><br>
+        I just put it here because you definitely love it a little more than you love me... <br><br> but it's alright, you are the most adorable girl on earth when you get all excited about christmas, it's the loveliest thing<br> I love youuuu</div>
+  </div>
+
+  <div class="all">
+    <h1>Christmas countdown</h1>
+    <div class="container">
+      <div class="counter-container">
+        <span id="days" class="counter">0</span>
+        <span>Days</span>
+      </div>
+      <div class="counter-container">
+        <span id="hours" class="counter">0</span>
+        <span>Hours</span>
+      </div>
+      <div class="counter-container">
+        <span id="minutes" class="counter">0</span>
+        <span>Minutes</span>
+      </div>
+      <div class="counter-container">
+        <span id="seconds" class="counter">0</span>
+        <span>Seconds</span>
+      </div>
+    </div>
+  </div>
+  <div class="image-container">
+    <img src="snowman.png" alt="Image 1" class="around-counter">
+    <img src="candy.png" alt="Image 2" class="around-counter">
+    <img src="tree.png" alt="Image 3" class="around-counter">
+  </div>
+  </main>
+  <canvas id="snowCanvas"></canvas>
+  <script src="christmas.js"></script>
+  <script src="snow.js"></script>
+</body>
+</html>

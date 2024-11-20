@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anniverssary</title>
+  <link rel="stylesheet" href="count.css">
+  <link rel="icon" type="image/png" href="../heart-icon.png">
+</head>
+<body>
+  <main>
+
+    <div>
+      <img class="heart-container" src="../images/liza.png" alt="Liza">
+      <div class="speech-bubble">
+        This is a little counter from the day that we have met, my love <br><br>
+        Every single second with you was like heaven on earth my angel <br><br>
+        To many many more months and years with you my life, I love you so much.
+        <br><br>
+        Ps: click on the little candy cane on the bottom right corner
+      </div>
+  </div>
+
+  <a href="christmas/christmas.html">
+    <img title="Click here for a special mode"id="christmas-link" src="surp.png" alt="Christmas Link" class="christmas-image">
+</a>
+
+    <h1>In love with you for:</h1> 
+  
+    <div class="container">
+      <div class="counter-container">
+        <span id="years" class="counter">0</span>
+        <span>Years</span>
+      </div>
+      <div class="counter-container">
+        <span id="months" class="counter">0</span>
+        <span>Months</span>
+      </div>
+      <div class="counter-container">
+        <span id="days" class="counter">0</span>
+        <span>Days</span>
+      </div>
+      <div class="counter-container">
+        <span id="hours" class="counter">0</span>
+        <span>Hours</span>
+      </div>
+      <div class="counter-container">
+        <span id="minutes" class="counter">0</span>
+        <span>Minutes</span>
+      </div>
+      <div class="counter-container">
+        <span id="seconds" class="counter">0</span>
+        <span>Seconds</span>
+      </div>
+    </div>
+    <button id="toggleHearts" title="Click here for a special effect" class="toggle-button" onclick="toggleHeartScript()"></button>
+
+  </main>
+  <canvas id="snowCanvas"></canvas>
+  <script src="count.js"></script>
+  <script src="hearts.js"></script>
+</body>
+</html>

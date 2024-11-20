@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <title>Ioli Dinosaur Game</title>
+        <link rel="stylesheet" href="dino.css">
+        <link rel="icon" type="image/png" href="../../heart-icon.png">
+        <script src="dino.js"></script>
+    </head> 
+    <body>
+
+
+        <div class="container">
+            <div>
+                <img src="../../images/liza.png" class="heart-container" alt="Liza">
+                <div class="speech-bubble">
+                    HII, so this the classic silly brower game, but i added characters that remind me of youu,<br><br>
+                    There is a duck because you are my little duck, a little kitten (you) and a pigeon...just to show you that
+                    i am not afraid of pigeons now *shakes while typing* <br><br>
+                    I love you my kitty
+                </div> 
+            </div>
+        <div class="choice"> <p>Choose your character here, my princess:</p></div>
+    
+        <div id="character-selection">
+
+            <img class="character-option" src="img/dino.png" alt="Dino" onclick="selectCharacter('img/dino.png')">
+            <img class="character-option" src="../../images/cat.png" alt="Character 2" onclick="selectCharacter('../../images/cat.png')">
+            <img class="character-option" src="img/dino3.png" alt="Character 3" onclick="selectCharacter('img/dino3.png')">
+            
+        </div>
+        <br>
+        <canvas id="board"></canvas>
+        
+    </div>
+        
+    </body>
+</html>

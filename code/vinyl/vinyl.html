@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Record Player</title>
+    <link rel="stylesheet" href="vinyl.css" />
+    <link rel="icon" type="image/png" href="../heart-icon.png">
+  </head>
+  <body>
+    <div>
+        <img class="heart-container" src="../images/liza.png" alt="Liza">
+        <div class="speech-bubble"> Hi my angel, <br><br> I’ve put together some songs that
+           I listen to often and that remind me of you. I’ve already sent you
+            some of these, but I wanted you to have the little explanations 
+            that go with them too.
+            <br><br>
+            I also wanted to create a special place where you can 
+            come and feel my love whenever you want through these songs. <br><br>
+            I designed them as little vinyls because i know you love vinyls !!
+            <br><br>I love you so much my princess
+        </div>
+    </div>
+
+    <div class="title-wrapper">
+        <div class="title">
+          Songs that remind me of you
+        </div>
+      </div>
+      
+    <div class="cd-container"> 
+        <div>
+          <img src="cd.png" class="cd-image" data-song="songs/song1.mp3" alt="CD 1">
+          <p>Song 1</p>
+        </div>
+        <div>
+          <img src="cd.png" class="cd-image" data-song="songs/song2.mp3" alt="CD 2">
+          <p>Song 2</p>
+        </div>
+        <div>
+          <img src="cd.png" class="cd-image" data-song="songs/song3.mp3" alt="CD 3">
+          <p>Song 3</p>
+        </div>
+        <div>
+          <img src="cd.png" class="cd-image" data-song="songs/song4.mp3" alt="CD 4">
+          <p>Song 4</p>
+        </div>
+        <div>
+          <img src="cd.png" class="cd-image" data-song="songs/song5.mp3" alt="CD 5">
+          <p>Song 5</p>
+        </div>
+      </div>
+
+      <div class="player-wrapper">
+        <div class="player">
+            <div class="record">
+                <img src="cd.png" alt="Vinyl" class="vinyl-image">
+                <div class="label"></div>
+            </div>
+            <div class="tone-arm">
+                <div class="control"></div>
+            </div>
+            <button class="btn"></button>
+            <div class="slider-container">
+                <input type="range" class="slider" min="0" max="1" step="0.1" value="0.7" />
+            </div>
+        </div>
+    </div>
+    
+    <div id="song-description" class="song-description"></div>
+    
+      
+
+    <audio loop class="my-song" preload="auto"></audio>
+    <script src="vinyl.js"></script>
+</body>
+
+</html>

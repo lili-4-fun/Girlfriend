@@ -1,0 +1,143 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    cursor: url('../../cursor/pinkheart_normalselect.cur'), auto;
+    background-color: #f7e9ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* This will remove the scroll bar */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8 8'%3E%3Cpath d='M0 0h1v1H0V0zm2 0h1v1H2V0zm2 0h1v1H4V0zm2 0h1v1H6V0zm1 1h1v1H7V1zm0 2h1v1H7V3zm0 2h1v1H7V5zm0 2h1v1H7V7zM6 7h1v1H6V7zm-2 0h1v1H4V7zm-2 0h1v1H2V7zm-2 0h1v1H0V7zM0 6h1v1H0V6zm0-2h1v1H0V4zm0-2h1v1H0V2zm1-1h1v1H1V1zm2 0h1v1H3V1zm2 0h1v1H5V1z' fill='%23F986AD'/%3E%3C/svg%3E");
+}
+.heart-container {
+    cursor: url('cursor/pinkheart_linkselect.cur'), auto;
+    position: absolute;
+    top: 15px;
+    left:5px;
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(8px 8px 8px #956fa1);
+
+}
+
+.heart-container:hover{
+    transform: scale(1.1);
+}
+.speech-bubble {
+    position: absolute;
+    top: 160px;
+    left: 200px;
+    padding: 10px;
+    background-color: #fff;
+    border: 4px solid #86469C;
+    border-radius: 8px;
+    width: 350px;
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    display: none; /* Hide initially */
+    z-index: 9999; /* High z-index */
+    color: #86469C;
+}
+
+.heart-container:hover ~ .speech-bubble {
+    display: block; /* Show the bubble on hover */
+}
+
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    top: 10px; /* Décalage depuis le haut de la bulle */
+    left: -20px; /* Position à gauche de la bulle */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #86469C;
+    /* Droite couleur, haut, gauche et bas transparents */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    transform: translateY(-30px); /* This moves the container up */
+    overflow: hidden;
+}
+
+.choice{
+    cursor: url('../../cursor/pinkheart_linkselect.cur'), auto;
+    font-size: 2rem;
+    color: #86469C;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    width: 1000px;
+}
+#board {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 3px solid #86469C;;
+}
+
+#character-selection {
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.character-option {
+    cursor: url('../../cursor/pinkheart_linkselect.cur'), auto;
+    margin: 0 10px;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.character-option.selected {
+    border: 2px solid #DCBFFF;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.title-container h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.sun-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+}
+ 
+/* Create a floating bobbing effect */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Moves up and down */
+    }
+}

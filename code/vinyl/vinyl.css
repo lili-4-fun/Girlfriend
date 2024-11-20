@@ -1,0 +1,316 @@
+* {
+  padding: 0;
+  margin: 0;
+  
+}
+
+body {
+  cursor: url('../cursor/pinkheart_normalselect.cur'), auto;
+  background-color: #f7e9ff;
+  font-family: 'Courier New', Courier, monospace;
+}
+/* Pixel Heart Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8 8'%3E%3Cpath d='M0 0h1v1H0V0zm2 0h1v1H2V0zm2 0h1v1H4V0zm2 0h1v1H6V0zm1 1h1v1H7V1zm0 2h1v1H7V3zm0 2h1v1H7V5zm0 2h1v1H7V7zM6 7h1v1H6V7zm-2 0h1v1H4V7zm-2 0h1v1H2V7zm-2 0h1v1H0V7zM0 6h1v1H0V6zm0-2h1v1H0V4zm0-2h1v1H0V2zm1-1h1v1H1V1zm2 0h1v1H3V1zm2 0h1v1H5V1z' fill='%23F986AD'/%3E%3C/svg%3E");
+}
+
+.title-wrapper {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #86469C;
+  animation: float 3s ease-in-out infinite; /* Floating effect */
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0); /* Float up and down */
+  }
+  50% {
+    transform: translateY(-10px); /* Moves up */
+  }
+}
+
+
+.heart-container {
+  cursor: url('../cursor/pinkheart_linkselect.cur'), auto;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 200px;
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(8px 8px 8px #956fa1);
+
+}
+
+.heart-container:hover{
+  transform: scale(1.1);
+}
+
+.speech-bubble {
+  position: absolute;
+  top: 160px; 
+  left: 200px;
+  padding: 10px;
+  background-color: #fff;
+  border: 4px solid #86469C;
+  border-radius: 8px;
+  width: 330px;
+  font-size: 23px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  display: none;
+  z-index: 10;
+  color: #86469C; 
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  top: 10px; /* Décalage depuis le haut de la bulle */
+  left: -20px; /* Position à gauche de la bulle */
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #86469C;
+  /* Droite couleur, haut, gauche et bas transparents */
+}
+
+.heart-container:hover + .speech-bubble {
+  display: block; /* Afficher la bulle lors du survol */
+}
+
+.player-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.song-description {
+  text-align: center;
+  position: absolute;
+  top: 66%; /* Adjust this value if needed */
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 1000px; /* Ensures it spans the full width of the player */
+  color: #86469C; /* Optional: Matches the style of other text */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px; /* Adjust this value if necessary */
+}
+
+.player {
+  background-color: #fca8ec;
+  width: 360px; /* Updated width */
+  height: 200px; /* Adjusted height proportionally */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  box-shadow: 0 8px 0 0 #b13c82;
+  filter: drop-shadow(8px 8px 8px #d5b5de);
+}
+
+.record {
+  height: 192px; /* Proportional to the new width */
+  width: 192px;
+  position: absolute;
+  top: 11px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.vinyl-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.record:before,
+.record:after {
+  position: absolute;
+  content: "";
+  border: 5px solid transparent;
+  border-radius: 50%;
+}
+
+.record:before {
+  height: 113px; /* Proportional adjustment */
+  width: 113px;
+}
+
+.record:after {
+  height: 80px; /* Proportional adjustment */
+  width: 80px;
+}
+
+.tone-arm {
+  height: 99px; /* Adjusted proportionally */
+  width: 6px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 27px;
+  right: 103px;
+  transform-origin: top;
+  transition: 1s;
+}
+
+.control {
+  background-color: #181312;
+  height: 14px;
+  width: 14px;
+  border: 8px solid #2c2c2c;
+  border-radius: 50%;
+  position: absolute;
+  top: -13px;
+  left: -13px;
+}
+
+.tone-arm:before {
+  content: "";
+  height: 44px;
+  width: 6px;
+  background-color: #ffffff;
+  position: absolute;
+  transform: rotate(30deg);
+  bottom: -39px;
+  right: 11px;
+}
+
+.tone-arm:after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 11px;
+  border-top: 20px solid #b2aea6;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  top: 116px;
+  right: 13px;
+  transform: rotate(30deg);
+}
+
+.btn {
+  height: 30px; /* Proportional adjustment */
+  width: 30px;
+  background-color: #b13c82;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  right: 33px;
+  border: none;
+  border: 4px solid #de74c0;
+  outline: none;
+  cursor: pointer;
+  cursor: url('../cursor/pinkheart_linkselect.cur'), auto;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  transform: rotate(-90deg);
+  width: 98px; /* Proportional adjustment */
+  height: 8px;
+  position: absolute;
+  left: 256px;
+  top: 65px;
+  background-color: #de74c0;
+  outline: none;
+  border-radius: 4px;
+  border: 6px solid #b13c82;
+  cursor: url('../cursor/pinkheart_linkselect.cur'), auto;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 13px;
+  background-color: #ffffff;
+  cursor: pointer;
+  cursor: url('../cursor/pinkheart_linkselect.cur'), auto;
+}
+
+.cd-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  position: relative;
+  top: 180px;
+  flex-wrap: wrap;
+}
+
+.cd-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centers the paragraph within the div */
+}
+
+.cd-container p {
+  margin-bottom: 20px; /* Adds spacing below the main paragraph */
+  text-align: center; /* Ensures the text is centered */
+  font-weight: bold;
+  font-size: 20px;
+  color: #86469C;
+}
+
+.cd-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  filter: drop-shadow(8px 8px 8px #d5b5de);
+  cursor: url('../cursor/pinkheart_linkselect.cur'), auto;
+}
+
+.cd-image:hover {
+  transform: scale(1.2);
+}
+
+.play {
+  transform: rotate(30deg);
+  transform-origin: top;
+  transition: 1s;
+}
+
+.on .vinyl-image {
+  animation:
+  spin 3s 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}

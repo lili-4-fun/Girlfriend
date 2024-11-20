@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f7e9ff;
+    font-family: sans-serif;
+    
+}
+.heart-container {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.heart-container {
+    cursor: url('../../cursor/pinkheart_linkselect.cur'), auto;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.heart-container:hover{
+    transform: scale(1.1);
+}
+.speech-bubble {
+    position: absolute;
+    top: 160px; 
+    left: 200px;
+    padding: 10px;
+    background-color: #fff;
+    border: 4px solid #86469C;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+    z-index: 10;
+    color: #86469C; 
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    top: 10px; /* Décalage depuis le haut de la bulle */
+    left: -20px; /* Position à gauche de la bulle */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #86469C;
+    /* Droite couleur, haut, gauche et bas transparents */
+}
+
+.heart-container:hover + .speech-bubble {
+    display: block; /* Afficher la bulle lors du survol */
+}
+.container {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the container */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensure content appears above the background */
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1; /* Control the opacity of the background */
+    z-index: -1; /* Ensure the background is behind the content */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8 8'%3E%3Cpath d='M0 0h1v1H0V0zm2 0h1v1H2V0zm2 0h1v1H4V0zm2 0h1v1H6V0zm1 1h1v1H7V1zm0 2h1v1H7V3zm0 2h1v1H7V5zm0 2h1v1H7V7zM6 7h1v1H6V7zm-2 0h1v1H4V7zm-2 0h1v1H2V7zm-2 0h1v1H0V7zM0 6h1v1H0V6zm0-2h1v1H0V4zm0-2h1v1H0V2zm1-1h1v1H1V1zm2 0h1v1H3V1zm2 0h1v1H5V1z' fill='%23F986AD'/%3E%3C/svg%3E");
+}
+
+
+.calculator{
+ background-color: #f9f9f9;
+ padding: 15px;
+ border-radius: 30px;
+ box-shadow: inset 5px 5px 12px #ffffff,
+                    5px 5px 12px rgba(0,0,0,.16);
+                    display: grid;
+                    grid-template-columns: repeat(4,68px);
+}
+input{
+    grid-column: span 4;
+    height: 70px;
+    width: 260px;
+    margin-bottom: 30px;
+    background-color: #ecf3f3;
+    box-shadow: inset -5px -5px 12px #ffffff,
+                       5px 5px 12px rgba(0,0,0,.16);
+                       border: none;
+                       border-radius: 30px;
+                       color: rgb(70,70, 70 );
+                       font-size: 50px;
+                       text-align: end;
+                       margin-top: 40px;
+                       padding: 20px;
+}
+button{
+    height: 48px;
+    width: 48px;
+    background-color: #ecf0f3;
+    box-shadow: -5px -5px 12px #ffffff,
+                  5px 5px 12px rgba(0,0,0,.16);
+                  border: none;
+                border-radius: 50px;
+                  margin: 8px;
+                  font-size: 16px;
+}
+.equal{
+    width: 115px;
+    border-radius: 40px;
+    
+    background-color: #ecf0f3;
+    box-shadow: -5px -5px 12px #ffffff,
+                  5px 5px 12px rgba(0,0,0,.16);
+                  background-color: rgb(226, 173, 203);
+}

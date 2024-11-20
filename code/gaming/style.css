@@ -1,0 +1,197 @@
+body {
+    cursor: url('../cursor/pinkheart_normalselect.cur'), auto;
+    background-color: #f7e9ff; /* Matches background from your site */
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+/* Pixel Heart Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8 8'%3E%3Cpath d='M0 0h1v1H0V0zm2 0h1v1H2V0zm2 0h1v1H4V0zm2 0h1v1H6V0zm1 1h1v1H7V1zm0 2h1v1H7V3zm0 2h1v1H7V5zm0 2h1v1H7V7zM6 7h1v1H6V7zm-2 0h1v1H4V7zm-2 0h1v1H2V7zm-2 0h1v1H0V7zM0 6h1v1H0V6zm0-2h1v1H0V4zm0-2h1v1H0V2zm1-1h1v1H1V1zm2 0h1v1H3V1zm2 0h1v1H5V1z' fill='%23F986AD'/%3E%3C/svg%3E");
+}
+.heart-container {
+    cursor: url('../cursor/pinkheart_linkselect.cur'), auto;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(8px 8px 8px #956fa1);
+
+}
+
+.heart-container:hover{
+    transform: scale(1.1);
+}
+.speech-bubble {
+    position: absolute;
+    top: 160px; 
+    left: 200px;
+    padding: 10px;
+    background-color: #fff;
+    border: 4px solid #86469C;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+    z-index: 10;
+    color: #86469C; 
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    top: 10px; /* Décalage depuis le haut de la bulle */
+    left: -20px; /* Position à gauche de la bulle */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #86469C;
+    /* Droite couleur, haut, gauche et bas transparents */
+}
+
+.heart-container:hover + .speech-bubble {
+    display: block; /* Afficher la bulle lors du survol */
+}
+
+.game-heading {
+    cursor: url('../cursor/pinkheart_textselect.cur'), auto;
+    font-size: 2rem;
+    color: #86469C;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    width: 1000px;
+}
+
+/* Game list container */
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styling each game item */
+.game-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 600px;
+    height: 40px;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.game-item:hover {
+    cursor: url('../cursor/pinkheart_linkselect.cur'), auto;
+    background-color: #feddf8; /* Hover color matches button hover style */
+    transform: scale(1.05);
+}
+
+.game-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+}
+/* Remove blue underline from game links */
+.game-link {
+    text-decoration: none;
+    color: inherit; /* Ensure the link inherits the text color */
+}
+
+p {
+    font-size: 1.5rem;
+    color: #86469C;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Add focus state for keyboard navigation */
+.game-item.focused {
+    background-color: #feddf8; /* Highlight color on focus */
+    transform: scale(1.05); /* Slight zoom when focused */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Add a triangle in front of the selected (focused) game item */
+.game-item.focused::before {
+    content: "\25B6"; /* Unicode for a right-pointing triangle */
+    color: #F986AD;   /* Color to match your design */
+    font-size: 1.5rem;
+    margin-right: 10px; /* Space between triangle and the game name */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Hover effect to simulate selection for demonstration */
+.game-item:hover::before {
+    content: "\25B6"; /* Unicode for a right-pointing triangle */
+    color: #F986AD;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* Styling for the instructions without the box */
+.instructions {
+    cursor: url('../cursor/pinkheart_textselect.cur'), auto;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    color: #86469C; /* Matches the rest of the page */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.key-instruction {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.key-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.instructions span {
+    color: #86469C;
+    font-size: 1.2rem;
+}
+
+/* Create a floating bobbing effect */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Moves up and down */
+    }
+}
