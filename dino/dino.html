@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport", content="width=device-width, initial-scale=1.0">
+        <title>Ioli Dinosaur Game</title>
+        <link rel="stylesheet" href="dino.css">
+        <script src="dino.js"></script>
+    </head> 
+    <body>
+
+        <div class="title-container">
+            <h1>Ioli Dinosaur Game</h1>
+        </div>
+        <div >
+            <img class="sun-container" src="../img/sun.png" alt="sun">
+        </div>
+
+        <canvas id="board"></canvas>
+        
+        <div> <p>Choose your character here:</p></div>
+        <div id="character-selection">
+
+            <img class="character-option" src="../img/dino.png" alt="Dino" onclick="selectCharacter('../img/dino.png')">
+            <img class="character-option" src="../img/character2.png" alt="Character 2" onclick="selectCharacter('../img/character2.png')">
+            <img class="character-option" src="../img/dino3.png" alt="Character 3" onclick="selectCharacter('../img/character3.png')">
+            
+        </div>
+    </body>
+</html>
