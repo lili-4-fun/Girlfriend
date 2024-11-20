@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ioli website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="heart-icon.png">
+  
+    <script>
+        function checkAnswers(event) {
+            event.preventDefault();
+
+            const answer1 = document.getElementById('question1').value.trim().toLowerCase();
+            const answer2 = document.getElementById('question2').value.trim().toLowerCase();
+
+            const correctAnswer1 = 'baby';
+            const correctAnswer2 = '23/01/2024';
+
+            if (answer1 === correctAnswer1 && answer2 === correctAnswer2) {
+                window.location.href = 'menu.html';
+            } else {
+                document.getElementById('error-message').innerText = 'Incorrect answers. Try again my heart.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img class="heart-container" src="heart.png" alt="heart">
+    </div>
+    <form onsubmit="checkAnswers(event);">
+        <div>
+            <div>
+                <label for="question1">What nickname do we call each other the most?</label>
+                <input type="text" id="question1" name="question1" required>
+            </div>
+            <div>
+                <label for="question2">What is the exact day that we started talking? (dd/mm/yyyy)</label>
+                <input type="text" id="question2" name="question2" required>
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <p id="error-message"></p>
+</body>
+</html>

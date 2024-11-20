@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome, Princess!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="heart-icon.png">
+
+</head>
+<body> 
+    <div >
+        <img class="heart-container" src="heart.png" alt="heart">
+    </div>
+
+    <div class="container">
+        <p id="welcomeMessage"></p>
+    </div>
+
+    <div>
+        <a href="leading_page.html" class="button">Click here to continue</a>    
+    </div>
+    
+    <footer class="footer" style="position: fixed; bottom: 0; width: 100%; text-align: right; background-color: transparent; color: rgba(0, 0, 0, 0.3); padding-right: 15px;">
+        <p style=" font-size: 1rem; min-height: 0px">Made by your loving wonderful girlfriend</p>
+    </footer>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const message = "Hiii my princess! Welcome to your own little website my world!! <br><br>This is something that I coded from scratch, with ideas that I have been gathering for a few months (i had to put them all together these last two weeks). <br><br> My idea was to create a little virtual safe space for you, where you can come to feel my love whenever you want it or need it.<br> On days that you feel bad, on days that you doubt everything. <br><br> May this website be an eternal demonstration of my undying love for you my heart. <br><br>I hope you will enjoy it, I love you so much <3";
+            
+            const target = document.getElementById("welcomeMessage");
+            target.innerHTML = message; // Directly set the inner HTML to display the message
+        });
+        </script>
+        
+
+</body>
+</html>

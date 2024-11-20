@@ -1,0 +1,199 @@
+body {
+    cursor: url('cursor/pinkheart_normalselect.cur'), auto;
+    margin: 0;
+    padding: 0;
+    background-color: #f7e9ff; /*#fee2e9*/
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Align items vertically */
+    min-height: 100vh;
+    
+}
+/* Pixel Heart Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8 8'%3E%3Cpath d='M0 0h1v1H0V0zm2 0h1v1H2V0zm2 0h1v1H4V0zm2 0h1v1H6V0zm1 1h1v1H7V1zm0 2h1v1H7V3zm0 2h1v1H7V5zm0 2h1v1H7V7zM6 7h1v1H6V7zm-2 0h1v1H4V7zm-2 0h1v1H2V7zm-2 0h1v1H0V7zM0 6h1v1H0V6zm0-2h1v1H0V4zm0-2h1v1H0V2zm1-1h1v1H1V1zm2 0h1v1H3V1zm2 0h1v1H5V1z' fill='%23F986AD'/%3E%3C/svg%3E");
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+p {
+    cursor: url('cursor/pinkheart_textselect.cur'), auto;
+    font-size: 1.5rem;
+    color:#86469C;
+    font-weight: bold;
+    white-space: pre-wrap;
+    overflow: hidden;
+    min-height: 150px; /* Adjust based on your text size and expected content */
+}
+
+.menu-container p{
+    min-height: 0px;
+}
+
+.heart-container {
+    cursor: url('cursor/pinkheart_linkselect.cur'), auto;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(8px 8px 8px #956fa1);
+
+}
+
+.heart-container:hover{
+    transform: scale(1.1);
+}
+.speech-bubble {
+    position: absolute;
+    top: 160px; 
+    left: 200px;
+    padding: 10px;
+    background-color: #fff;
+    border: 4px solid #86469C;
+    border-radius: 8px;
+    width: 350px;
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+    z-index: 10;
+    color: #86469C; 
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    top: 10px; /* Décalage depuis le haut de la bulle */
+    left: -20px; /* Position à gauche de la bulle */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #86469C;
+    /* Droite couleur, haut, gauche et bas transparents */
+}
+
+.heart-container:hover + .speech-bubble {
+    display: block; /* Afficher la bulle lors du survol */
+}
+
+.link-container {
+    margin-top: 20px; /* Adds some space between the container and the link */
+    text-align: center;
+    
+}
+
+.link-container a {
+    font-size: 1.2rem;
+    color: #5c005c;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.link-container a:hover {
+    
+    text-decoration: underline;
+}
+
+/* Updated menu-container to include a row gap between the two lines */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-row-gap: 20px; /* Gap between the two rows */
+    grid-column-gap: 40px; /* Space between the columns */
+    padding: 20px;
+    margin-top: 50px; /* Adjust vertical position */
+}
+
+/* Style for each individual menu item remains the same */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    filter: drop-shadow(8px 8px 8px #d5b5de);
+}
+
+/* Add hover effect for images to move slightly like a video game effect */
+.menu-icon {
+    width: 200px; /* Already defined */
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for movement */
+}
+
+.menu-icon:hover {
+    transform: translateY(-10px) rotate(-2deg) scale(1.05); /* Movement effect on hover */
+}
+
+
+/* Styling for the menu links */
+.menu-link {
+    font-size: 1.2rem;
+    color: #86469C;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: url('cursor/pinkheart_linkselect.cur'), auto;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+.countup-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1.5rem; /* Slightly smaller for pixel effect */
+    color: #86469C;
+    margin-top: 30px;
+}
+
+.countup-timer div {
+    margin: 10px;
+    background-color: #fee2e9;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 120px; /* Smaller and more "blocky" for pixel style */
+    text-align: center;
+    border: 4px solid #86469C; /* Thick borders for pixel art style */
+}
+
+.game-heading {
+    font-size: 1.8rem;
+    width: 1000px;
+    color: #86469C;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+

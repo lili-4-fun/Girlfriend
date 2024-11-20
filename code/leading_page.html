@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome, Princess!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="heart-icon.png">
+
+</head>
+<body> 
+    <div >
+        <img class="heart-container" src="heart.png" alt="heart">
+    </div>
+
+    <div class="container">
+        <p id="welcomeMessage"></p>
+    </div>
+
+    <div>
+        <a href="login_page.html" class="button">Click here to continue</a>    
+    </div>
+
+    <script>
+     document.addEventListener("DOMContentLoaded", function() {
+            const message = "First, a little test to keep this website more private and test you a little <br><br> (you know those answers better than me my love, i am the one who needs to be tested hahah)<br><br>";
+            
+            const target = document.getElementById("welcomeMessage");
+            target.innerHTML = message; // Directly set the inner HTML to display the message
+        });
+
+    </script>
+
+</body>
+</html>
